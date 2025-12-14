@@ -4,7 +4,7 @@ export type EventDocument = HydratedDocument<IEvent>;
 export type EventModel = Model<IEvent>;
 
 export interface IEvent {
-  title: string;
+    title: string;
   slug?: string; // Auto-generated from title in pre-save.
   description: string;
   overview: string;
@@ -153,3 +153,6 @@ EventSchema.pre('save', function (this: EventDocument) {
 
 export const Event: EventModel =
   (models.Event as unknown as EventModel) || model<IEvent>('Event', EventSchema);
+
+// Default export for compatibility with code importing the model as a default.
+export default Event;
