@@ -99,7 +99,6 @@ const EventDetails = async ({
     })();
 
     const bookings = 10;
-
     const similarEvents: IEvent[] = await getSimilarEventsBySlug(slug);
 
     return (
@@ -150,7 +149,7 @@ const EventDetails = async ({
                         ):(
                             <p className="text-sm">Be the first to book your spot!</p>
                         )}
-                        <BookEvent />
+                        <BookEvent eventId={event._id} slug={event.slug} />
                     </div>
                 </aside>
 
@@ -169,6 +168,7 @@ const EventDetails = async ({
 }
 
 const EventDetailsPage = ({ params }: { params: { slug: string } | Promise<{ slug: string }> }) => {
+
     return (
         <Suspense fallback={<div />}>
             <EventDetails params={params} />
