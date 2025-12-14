@@ -52,3 +52,6 @@ BookingSchema.pre('save', async function (this: BookingDocument) {
 
 export const Booking: BookingModel =
   (models.Booking as unknown as BookingModel) || model<IBooking>('Booking', BookingSchema);
+
+// Default export for compatibility with code importing the model as a default.
+export default Booking;

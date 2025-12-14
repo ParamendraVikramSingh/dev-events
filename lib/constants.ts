@@ -1,12 +1,11 @@
 export type EventItem={
-    image:string,
-    title:string,
-    slug:string;
-    location:string;
-    date:string;//e.g., "2025-11-07"
-    time:string;//e.g., "09:00 AM"
+    image: string,
+    title: string,
+    slug: string,
+    location: string,
+    date: string, // e.g., "2025-11-07"
+    time: string, // e.g., "09:00 AM"
 };
-
 //Curated list of upcoming/popular developer events
 //Image assets live under public/images and can be used directly with next/image
 //via paths like "/images/event1.png".
