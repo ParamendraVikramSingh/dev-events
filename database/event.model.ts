@@ -93,7 +93,6 @@ const EventSchema = new Schema<IEvent>(
     slug: {
       type: String,
       unique: true,
-      index: true,
       trim: true,
     },
     description: requiredString,
@@ -114,8 +113,6 @@ const EventSchema = new Schema<IEvent>(
     strict: true,
   },
 );
-
-EventSchema.index({ slug: 1 }, { unique: true });
 
 EventSchema.pre('save', function (this: EventDocument) {
   // Only regenerate slug when title changes.
